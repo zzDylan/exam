@@ -86,12 +86,13 @@ class OrderController extends AdminController
     {
         $form = new Form(new Order());
 
-        $form->text('account', __('账号'));
-        $form->password('password', __('密码'));
-        $form->text('country_code', __('国家编码'));
-        $form->text('country_name', __('国家名字'));
-        $form->text('city_code', __('城市编码'));
-        $form->text('city_name', __('城市名字'));
+        $form->text('account', __('账号'))->rules('required');
+        $form->password('password', __('密码'))->rules('required');
+        $form->select('country_name', __('国家名字'))->options(['AL'=>'Alabama','AK'=>'Alaska','AZ'=>'Arizona','AR'=>'Arkansas','CA'=>'California','CO'=>'Colorado','CT'=>'Connecticut','DE'=>'Delaware','DC'=>'District of Columbia','FL'=>'Florida','GA'=>'Georgia','HI'=>'Hawaii','ID'=>'Idaho','IL'=>'Illinois','IN'=>'Indiana','IA'=>'Iowa','KS'=>'Kansas','KY'=>'Kentucky','LA'=>'Louisiana','ME'=>'Maine','MD'=>'Maryland','MA'=>'Massachusetts','MI'=>'Michigan','MN'=>'Minnesota','MS'=>'Mississippi','MO'=>'Missouri','MT'=>'Montana','NE'=>'Nebraska','NV'=>'Nevada','NH'=>'New Hampshire','NJ'=>'New Jersey','NM'=>'New Mexico','NY'=>'New York','NC'=>'North Carolina','ND'=>'North Dakota','OH'=>'Ohio','OK'=>'Oklahoma','OR'=>'Oregon','PA'=>'Pennsylvania','RI'=>'Rhode Island','SC'=>'South Carolina','SD'=>'South Dakota','TN'=>'Tennessee','TX'=>'Texas','UT'=>'Utah','VT'=>'Vermont','VA'=>'Virginia','WA'=>'Washington','WV'=>'West Virginia','WI'=>'Wisconsin','WY'=>'Wyoming','AS'=>'American Samoa','FM'=>'Micronesia','GU'=>'Guam','MH'=>'Marshall Islands','MP'=>'Northern Mariana Islands','PW'=>'Palau','UM'=>'U.S. Minor Outlying Islands','VI'=>'Virgin Islands, U.S.','AA'=>'Armed Forces Americas (Except Canada)','AE'=>'Armed Forces Canada, Europe, Middle East, Africa','AP'=>'Armed Forces Pacific','PR'=>'Puerto Rico',]);
+        // $form->text('country_code', __('国家编码'));
+        // $form->text('country_name', __('国家名字'));
+        // $form->text('city_code', __('城市编码'));
+        // $form->text('city_name', __('城市名字'));
         $form->text('center_code', __('考场编码'));
         $form->datetime('test_time','考场时间')->format('YYYYMM');
         // $form->text('card_num', __('卡号'));
