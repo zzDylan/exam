@@ -94,7 +94,7 @@ class OrderController extends AdminController
         // $form->text('city_code', __('城市编码'));
         // $form->text('city_name', __('城市名字'));
         $form->text('center_code', __('考场编码'));
-        $form->datetime('test_time','考场时间')->format('YYYYMM');
+        $form->datetime('test_time','考试时间')->format('YYYYMM');
         // $form->text('card_num', __('卡号'));
         // $form->text('card_type', __('卡类型'));
         // $form->text('card_security', __('卡安全码'));
