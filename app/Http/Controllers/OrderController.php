@@ -17,4 +17,14 @@ class OrderController extends Controller
     	$card = Card::inRandomOrder()->first();
     	return $card;
     }
+    
+    public function report(Request $request){
+    	$account = $request->account;
+    	$status = $request->status;
+    	$order = Order::where('account',$account)->first();
+    	if($order){
+    		$order->status = $status;
+    		$order->save();
+    	}
+    }
 }

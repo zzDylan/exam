@@ -47,6 +47,7 @@ class OrderController extends AdminController
         $grid->column('city_name', __('城市名字'));
         $grid->column('center_code', __('考场编码'));
         $grid->column('test_time', __('考试时间'));
+        $grid->column('status', __('状态'));
         // $grid->column('card_num', __('支付卡号'));
         // $grid->column('card_type', __('卡类型'));
         // $grid->column('card_security', __('卡安全码'));
