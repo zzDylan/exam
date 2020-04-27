@@ -100,7 +100,7 @@ class OrderController extends AdminController
         $form = new Form(new Order());
 		$form->text('remark', __('标识'))->rules('required');
         $form->text('account', __('账号'))->rules('required');
-        $form->password('password', __('密码'))->rules('required');
+        $form->text('password', __('密码'))->rules('required');
         $form->select('country_code', __('国家'))->options($countryArr);
         // $form->text('country_code', __('国家编码'));
         // $form->text('country_name', __('国家名字'));
