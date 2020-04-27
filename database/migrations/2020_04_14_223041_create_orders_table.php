@@ -28,7 +28,8 @@ class CreateOrdersTable extends Migration
             // $table->string('card_security')->nullable()->comment('卡安全码');
             // $table->string('card_expire_month')->nullable()->comment('卡过期月份');
             // $table->string('card_expire_year')->nullable()->comment('卡过期年份');
-            $table->integer('status')->default(0)->comment('报名状态');
+            $table->string('remark')->nullable()->comment('标识');
+            $table->string('status')->nullable()->comment('报名状态');
             $table->timestamps();
         });
     }
