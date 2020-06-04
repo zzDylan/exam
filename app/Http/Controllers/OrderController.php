@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Card;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\OrderShipped;
 
 class OrderController extends Controller
 {
@@ -27,4 +29,19 @@ class OrderController extends Controller
     		$order->save();
     	}
     }
+    
+    public function sendMail($account){
+    	$order = Order::where('account',$account)->first();
+    	if(!$order){
+    		return 'account not exist';
+    	}
+    	try{
+    		Mail::to('380227165@qq.com')->send(new OrderShipped($order));
+    		return 'send mail success';
+    	}catch(\Exception $e){
+    		return 'send mail error:'.$e->getMessage();
+    	}
+    	
+    }
+    
 }

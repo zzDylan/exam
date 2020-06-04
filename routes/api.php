@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('orders','OrderController@index');
 Route::get('random_card','OrderController@randomCard');
 Route::get('order_report','OrderController@report');
+Route::get('send_mail/{account}','OrderController@sendMail');
