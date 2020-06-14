@@ -13,4 +13,5 @@ Route::group([
     $router->get('/', 'HomeController@index')->name('admin.home');
     $router->resource('orders', OrderController::class);
 	$router->resource('cards', CardController::class);
+	$router->resource('histories', HistoryController::class);
 });

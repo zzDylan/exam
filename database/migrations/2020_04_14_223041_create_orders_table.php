@@ -32,6 +32,7 @@ class CreateOrdersTable extends Migration
             $table->string('remark2')->nullable()->comment('备注');
             $table->string('status')->nullable()->comment('报名状态');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
