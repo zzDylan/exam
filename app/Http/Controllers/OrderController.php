@@ -36,7 +36,7 @@ class OrderController extends Controller
     		return 'account not exist';
     	}
     	try{
-    		Mail::to('380227165@qq.com')->from(env('MAIL_FROM_ADDRESS'))->cc(env('MAIL_FROM_ADDRESS'))->send(new OrderShipped($order));
+    		Mail::to('380227165@qq.com')->from(env('MAIL_FROM_ADDRESS'))->send(new OrderShipped($order));
     		return 'send mail success';
     	}catch(\Exception $e){
     		return 'send mail error:'.$e->getMessage();
